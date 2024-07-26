@@ -17,7 +17,7 @@ const DeleteBook = () => {
       .delete(`http://localhost:5555/api/books/${id}`)
       .then(() => {
         setIsLoading(false);
-        navigate("/");
+        navigate("/home");
         enqueueSnackbar("Book deleted successfully", { variant: "success" });
       })
       .catch((err) => {
@@ -28,14 +28,16 @@ const DeleteBook = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 bg-slate-50">
       <BackButton />
-      <h1 className="text-3xl my-4">Delete Book</h1>
+      <h1 className="text-3xl my-4 text-teal-900">Delete Book</h1>
       {isLoading ? <Spinner /> : ""}
-      <div className="flex flex-col items-center border-2 border-sky-400 rounded-xl w-[600px] p-8 mx-auto">
-        <h1 className="text-2xl">Are you sure you want to delete this book?</h1>
+      <div className="flex flex-col items-center border-2 border-gray-500 rounded-xl w-[600px] p-8 mx-auto">
+        <h1 className="text-2xl text-teal-900">
+          Are you sure you want to delete this book?
+        </h1>
         <button
-          className="p-4 bg-red-600 text-white m-8 w-full"
+          className="p-4 bg-red-600 text-white m-8 w-1/4"
           onClick={handleDeleteBook}
         >
           Ok

@@ -40,10 +40,10 @@ function Home() {
           Card
         </button>
       </div> */}
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl my-8">Books List</h1>
+      <div className="flex justify-between items-center mx-2">
+        <h1 className="text-xl my-8 text-teal-900 px-4">Browse Books</h1>
         <Link to="/books/create">
-          <MdOutlineAddBox className="text-sky-800 text-4xl" />
+          <MdOutlineAddBox className="text-teal-900 text-4xl" />
         </Link>
       </div>
       {isLoading ? (
