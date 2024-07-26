@@ -70,10 +70,12 @@ router.post("/", async (req, res) => {
         message: "Send all required fields: title, author, publishYear",
       });
     }
+    const { title, author, publishYear, img } = req.body;
     const newBook = new Book({
-      title: req.body.title,
-      author: req.body.author,
-      publishYear: req.body.publishYear,
+      title,
+      author,
+      publishYear,
+      img,
     });
     const savedBook = await newBook.save();
     return res.status(201).json(savedBook);
